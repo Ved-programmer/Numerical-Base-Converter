@@ -1,6 +1,8 @@
 def convert(number = 10, baseTo = 10, baseFrom = 10):
-    baseTo = int(baseTo)
-    baseFrom = int(baseFrom)
+    try:
+        baseTo = int(baseTo);baseFrom = int(baseFrom)
+    except Exception:return "invalid base, must be a numerical value"
+
     correspondenceString = r"""0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz/-"""
     if baseTo > len(correspondenceString):return "this base is not supported"
     for i in str(number):
@@ -21,9 +23,4 @@ def convert(number = 10, baseTo = 10, baseFrom = 10):
         convertedBase10 //= baseTo
 
     return final[::-1]
-
-
-
-  
-
 
