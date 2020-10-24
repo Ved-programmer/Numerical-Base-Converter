@@ -4,6 +4,7 @@ def convert(number = 10, baseTo = 10, baseFrom = 10):
     except Exception:return "invalid base, must be a numerical value"
 
     correspondenceString = r"""0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz/-"""
+    if baseTo < 1 or baseFrom < 1:return "base must be greator then 0"
     if baseTo > len(correspondenceString):return "this base is not supported"
     for i in str(number):
         if i not in correspondenceString:return "invalid charater"
