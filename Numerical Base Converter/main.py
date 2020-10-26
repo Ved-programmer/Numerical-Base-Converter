@@ -8,14 +8,14 @@ root.title("Numerical Base Converter")
 
 def calculate():
     global calculation
-    converted = convertBase.convert(number.get(), baseTo.get(), baseFrom.get())
+    converted = convertBase.convert(number.get(), baseFrom.get(), baseTo.get())
     try:calculation.pack_forget()
     except Exception:pass
     calculation = Label(root, text = converted, bg = "dark blue", fg = "white", pady = 57, font = "ms-sans 20")
     calculation.pack(anchor = "center", fill = X)
     
 
-bases = [str(i) for i in range(1, 67)]
+bases = [str(i) for i in range(1, 65)]
 ttk.Style().configure("style1.TCombobox", foreground="blue", background="black")
 
 baseTo = StringVar()
