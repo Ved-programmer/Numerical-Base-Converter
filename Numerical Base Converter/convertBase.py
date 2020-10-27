@@ -1,28 +1,52 @@
+correspondenceString = r"""0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz/-"""
+
 def convert(number = '10', baseFrom = 10, baseTo = 10):
-    try:
-        baseTo = int(baseTo);baseFrom = int(baseFrom)
-    except Exception:return "invalid base, must be a numerical value"
+    check = checks(number, baseFrom, baseTo)
+    if not check.accepted:return check.message
+    convertedToBase10 = convertToBase10(number, baseFrom)
+    return convertToBase(convertedToBase10, baseTo)
 
-    correspondenceString = r"""0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz/-"""
-    
-    if baseTo < 1 or baseFrom < 1:return "base must be greator then 0"
-    if baseTo > len(correspondenceString):return "this base is not supported"
-    for i in str(number):
-        if i not in correspondenceString:return "invalid charater"
-        
-    numToCharCorrespondence = {i:j for i, j in enumerate(correspondenceString)}
+
+def convertToBase10(number = "10", baseFrom = 10, correspondenceString = correspondenceString):
+    baseFrom = int(baseFrom)
     charToNumCorrespondence = {j:i for i, j in enumerate(correspondenceString)}
-
-    final = ""
-
     convertedBase10 = 0
+
     for num, char in enumerate(reversed(str(number))):
         convertedBase10 += int(charToNumCorrespondence[char]) * (baseFrom ** num)
+    
+    return convertedBase10
 
-    while convertedBase10 != 0:
-        remainder = convertedBase10 % baseTo
+
+
+def convertToBase(number = "10", baseTo = 10, correspondenceString = correspondenceString):
+    baseTo = int(baseTo)
+    numToCharCorrespondence = {i:j for i, j in enumerate(correspondenceString)}
+    convertedNum = ""
+
+    while number != 0:
+        remainder = number % baseTo
         corresponding = numToCharCorrespondence[remainder]
-        final += str(corresponding)
-        convertedBase10 //= baseTo
+        convertedNum += str(corresponding)
+        number //= baseTo
 
-    return final[::-1]
+    return convertedNum[::-1]
+
+
+def checks(number, baseFrom, baseTo, correspondenceString = correspondenceString):
+    try:
+        baseTo = int(baseTo);baseFrom = int(baseFrom)
+    except Exception:return checkMessage(False, "invalid base, must be a numerical value")
+    
+    if baseTo < 1 or baseFrom < 1:return checkMessage(False, "base must be greator then 0")
+    if baseTo > len(correspondenceString):return checkMessage(False, "this base is not supported")
+    for i in str(number):
+        if i not in correspondenceString:return checkMessage(False, "invalid charater")
+    
+    return checkMessage(True, "All parameters accepted")
+    
+
+class checkMessage:
+    def __init__(self, accepted, message):
+        self.accepted, self.message = accepted, message
+    
