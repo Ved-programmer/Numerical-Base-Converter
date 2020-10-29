@@ -49,4 +49,3 @@ def checks(number, baseFrom, baseTo, correspondenceString = correspondenceString
 class checkMessage:
     def __init__(self, accepted, message):
         self.accepted, self.message = accepted, message
-    
