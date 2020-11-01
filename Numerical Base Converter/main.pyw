@@ -3,6 +3,8 @@ from tkinter import ttk
 import convertBase
 
 root = Tk()
+root.maxsize(610, 355)
+root.minsize(590, 345)
 root.geometry(f"{600}x{350}")
 root.title("Numerical Base Converter")
 
