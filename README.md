@@ -18,7 +18,7 @@ It takes a number, the base of the entered number and the base of the output num
    
    * The program is divided into two files. one for the front end and one for the backend.
 
-   * the main.py file is the main execution of the program, contains the front end code and uses the convertBase.py file for the backEnd.
+   * the main.pyw file is the main execution of the program, contains the front end code and uses the convertBase.py file for the backEnd.
 
 <br>
 
