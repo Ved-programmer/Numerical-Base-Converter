@@ -34,6 +34,10 @@ In-development, not in condition to use
 
 ## Can I contribute ?
 Yes
+ ### Contributors:
+  - **Ved Rathi (owner)** 
+  - **Navdeep Kante**
+
 
 <br><br>
 
