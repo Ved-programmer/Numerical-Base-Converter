@@ -26,7 +26,7 @@ It takes a number, the base of the entered number and the base of the output num
 
 ## Status :
 
-In-development, not in condition to use
+In condition to use, few bug fixes pending.
 
 <br>
 
