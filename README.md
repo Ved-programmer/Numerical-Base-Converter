@@ -1,7 +1,7 @@
 # Numerical Base Converter
 
 ## About
-*A Numerical Base Converter Made with Python 3.9*
+*A Numerical Base Converter Made with Python 3*
 
 It takes a number, the base of the entered number and the base of the output number. When the calculate button is clicked the program converts the number to the output base.
 
