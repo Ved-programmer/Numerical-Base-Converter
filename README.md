@@ -24,20 +24,6 @@ It takes a number, the base of the entered number and the base of the output num
 
 ---
 
-## Status :
-
-In condition to use.
-
-<br>
-
----
-
-## Can I contribute ?
-Yes
- ### Contributors:
-  - **Ved Rathi (owner)** 
-  - **Navdeep Kante**
-
 
 <br><br>
 
